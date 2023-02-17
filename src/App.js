@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Routes, Navigate } from "react-router-dom";
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import ProtectedRoute from './components/protectedRoute';
+import LoginPages from './pages/loginPages';
+import DashboardPages from './pages/dashboardPages';
+import TaxesPages from './pages/taxesPages';
+import FormTaxPages from './pages/formTaxPages';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/login' element={<LoginPages />} />
+      <Route path='/dashboard' element={ 
+        <ProtectedRoute><DashboardPages /></ProtectedRoute>
+        }>
+        <Route path='taxes' element={<TaxesPages />} />
+        <Route path='formulario/:idTax' element={<FormTaxPages />}/>
+      </Route>
+      <Route path='*' element={<Navigate to='/login' />} />
+    </Routes>
+    
   );
 }
 

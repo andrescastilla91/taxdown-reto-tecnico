@@ -1,0 +1,4 @@
+{
+  "/taxes/:id/form": "/form",
+  "/taxes/:id/form/:formId": "/taxes/:formId"
+}
