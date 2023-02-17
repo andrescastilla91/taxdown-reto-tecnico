@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# TaxDown Challenge App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created to meet the Taxdown challenge based on the Frontend Senior position, using Javascript-based technology with the use of the React library; implementing the use of Redux as store and Redux Saga as middleware. With route protection in login use. Dynamic forms with the use of React Hook Form based on parameters obtained according to the request to API.
+
+The application allows connection to a fake api through asynchronous requests using Axios as a Http client and obtaining the information from the database.
+
+Style designs were used with predefined css and Javascript according to templates implementing the Bootstrap library
 
 *Host your own cloud at home*
 
@@ -8,8 +12,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Development Setup](#development-setup)
   - [Local setup (Linux & Windows)](#local-setup-linux--windows)
   - [Run locally](#run-locally)
-    - [Server](#available-scripts-server)
-    - [Server Database](#available-scripts-database)
+    - [Server](#server)
+    - [Server Database](#server-database)
 
 
 ## Development Setup
@@ -34,7 +38,7 @@ npm install
 
 In the project directory, you can run:
 
-### Server
+#### Server
 
 ```bash
 npm start
@@ -46,14 +50,18 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-### Server Database
+#### Server Database
+
+Open another terminal and go to the project directory and run the following command.
+
 ```bash
-npm run db-json
+npm run db-server
 ```
 
 Runs the server database in the development mode.\
+
+In the console of the terminal you will be able to know the routes enabled to make requests to the api and obtain the information from the database
+
 Open [http://localhost:3005/users](http://localhost:3005/users) to test database connection, and know the data of registered users.
-
-
 
 
